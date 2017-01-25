@@ -19,7 +19,9 @@ function startSpeedBackground(){
     });
 
     speed.on('close', (code) => {
-      stats[startDate] = JSON.parse(buffer);
+      if(code == 0){
+        stats[startDate] = JSON.parse(buffer);
+      }
     });
   }, 20000);
 }
